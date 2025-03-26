@@ -18,8 +18,8 @@
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/yourusername/your-repository.git
-cd your-repository
+git clone https://github.com/mohsinfort/Bamfunds.git
+cd Bamfunds
 ```
 
 ### 2️⃣ Create a Virtual Environment
@@ -48,4 +48,6 @@ pytest tests/e2e/test_login.py
 ## 📌 Generating Test Reports
 HTML Report
 ```sh
+pip install pytest-html
+
 pytest --html=report.html --self-contained-html
