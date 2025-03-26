@@ -1,5 +1,5 @@
 import re
-from tests.utils import config
+from utils import config
 from playwright.sync_api import Page, expect
 
 def test_has_title(page: Page):
