@@ -1,0 +1,4 @@
+__pycache__/
+playwright/.cache/
+pytest_cache/
+logs/
