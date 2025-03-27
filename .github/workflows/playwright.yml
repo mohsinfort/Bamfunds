@@ -16,6 +16,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Verify Files (Debugging)
+        run: ls -l  # Check if 'requirements.txt' exists
+
       - name: Set Up Python
         uses: actions/setup-python@v4
         with:
@@ -27,12 +30,19 @@ jobs:
           source venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest  # Install pytest explicitly
 
       - name: Install Playwright
         run: |
           source venv/bin/activate
           pip install playwright
           playwright install --with-deps  # Install browsers
+
+      - name: Debug Pytest Installation
+        run: |
+          source venv/bin/activate
+          which pytest  # Check if pytest is installed
+          pip list | grep pytest  # Verify pytest installation
 
       - name: Run Playwright Tests
         run: |
